@@ -484,7 +484,7 @@ func (b *BlockStorage) UpdateBalance(
 
 	key := GetBalanceKey(change.Account, change.Currency)
 	// Get existing balance on key
-	exists, balance, err := dbTransaction.Get(ctx, key)
+	/*exists, balance, err := dbTransaction.Get(ctx, key)
 	if err != nil {
 		return err
 	}
@@ -512,12 +512,13 @@ func (b *BlockStorage) UpdateBalance(
 		}
 
 		existingValue = amount.Value
-	}
+	}*/
 
-	newVal, err := types.AddValues(change.Difference, existingValue)
+  newVal := change.Difference
+	/*newVal, err := types.AddValues(change.Difference, existingValue)
 	if err != nil {
 		return err
-	}
+	}*/
 
 	bigNewVal, ok := new(big.Int).SetString(newVal, 10)
 	if !ok {
