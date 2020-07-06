@@ -18,3 +18,5 @@ require (
 	golang.org/x/sys v0.0.0-20200515095857-1151b9dac4a9 // indirect
 	golang.org/x/tools v0.0.0-20200507205054-480da3ebd79c // indirect
 )
+
+replace github.com/coinbase/rosetta-sdk-go => ../rosetta-sdk-go
